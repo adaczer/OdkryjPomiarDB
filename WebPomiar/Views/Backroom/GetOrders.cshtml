@@ -1,0 +1,49 @@
+﻿@model IEnumerable<WebPomiar.Models.Order>
+@{
+    ViewBag.Title = "GetOrders";
+    Layout = "~/Views/Shared/_LayoutBackroom.cshtml";
+}
+<h4 class="mb-4">Zamówienia od użytkowników:</h4>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Lp</th>
+            <th>Imię</th>
+            <th>Nazwisko</th>
+            <th>Pakiet</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    @{int lp = 1; }
+    @foreach (var item in Model)
+    {
+    <tr>
+        <td>@(lp++)</td>
+        <td>@item.FirstName</td>
+        <td>@item.LastName</td>
+        <td>
+            @{if (item.Package == 1)
+                {
+                    @:SMART
+                }
+            else if(item.Package == 2)
+            {
+                @:PROFESSIONAL
+            }
+            else if (item.Package == 3)
+            {
+                @:GOLD
+            }
+            else
+            {
+                @:inny
+            }
+            }
+            </td>
+
+            <td>@item.Email</td>
+        </tr>
+    }
+
+</table>
+

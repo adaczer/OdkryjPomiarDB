@@ -1,0 +1,381 @@
+﻿@model WebPomiar.Models.Message
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PomiarDB - Odkryj nową aplikację pomiarową</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/responsive.css" rel="stylesheet" />
+    <link rel="icon" href="~/img/ikonka.ico" type="image/x-icon" />
+
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <div class="container">
+                <a class="navbar-brand" href="#"><img src="~/img/logo.png"></a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse  justify-content-end" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="#" id="link0">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="link1">O APLIKACJI</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="link2">SZCZEGÓŁY</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="link3">POBIERZ</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="link4">PAKIETY</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#" id="link5">KONTAKT</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+
+    <!-- Hero section-->
+
+    <section id="hero">
+        <div class="container">
+
+            <a href="#" class="scrollup"></a>
+
+
+            <div class="row main-hero-content">
+                <div class="col-md-6">
+
+                    <h1>ODKRYJ NOWĄ APLIKACJĘ POMIAROWĄ</h1>
+                    <p>Zarządzaj bazą Klientów oraz pomiarami gdziekolwiek jesteś. </p>
+                    <div class="hero-buttons">
+                        <a href="#" class="btn btn-outline-primary btn-white" id="link6">Kup Teraz</a>
+                        <a href="https://pomiardb.azurewebsites.net/" class="btn btn-outline-primary btn-white">Wypróbuj</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="image-box">
+                        <img src="~/img/measure4.png" class="img-fluid">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <!-- About section-->
+
+
+    <section id="about">
+        <div class="container">
+            @{
+                if (ViewBag.msg == true)
+                {
+                    @:<div class="row justify-content-center text-center"><h3 style="color: mediumslateblue">Dziękujemy !<br />Twoja wiadomość została pomyślnie wysłana</h3></div><br />
+                }
+            }
+            
+            @{
+                if (ViewBag.order == true)
+                {
+                    @:<div class="row justify-content-center text-center"><h3 style="color: mediumslateblue">Dziękujemy !<br />Twoje zamówienie zostało przekazane do realizacji</h3></div><br />
+                }
+            }
+            <div class="row section-title justify-content-center">
+
+                <h2 class="section-title-heading">O aplikacji</h2>
+            </div>
+
+            <div class="row justify-content-center text-center mt-5">
+                <div class="col-md-4">
+                    <i class="fas fa-cogs fa-3x mb-2"></i>
+                    <h3>Profesjonalizm</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus exercitationem suscipit officiis quos, sapiente nostrum cupiditate odit, quis voluptatem sequi quia tempora quo corporis sint voluptatibus ad! Distinctio, placeat repudiandae.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-bell fa-3x mb-2"></i>
+                    <h3>Doświadczenie</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus exercitationem suscipit officiis quos, sapiente nostrum cupiditate odit, quis voluptatem sequi quia tempora quo corporis sint voluptatibus ad! Distinctio, placeat repudiandae.</p>
+                </div>
+                <div class="col-md-4">
+                    <i class="fas fa-power-off fa-3x mb-2"></i>
+                    <h3>Jakość</h3>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus exercitationem suscipit officiis quos, sapiente nostrum cupiditate odit, quis voluptatem sequi quia tempora quo corporis sint voluptatibus ad! Distinctio, placeat repudiandae.</p>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Feature section-->
+
+    <section id="features">
+        <div class="container">
+
+            <div class="row section-title justify-content-center mb-4">
+                <h2 class="section-title-heading">szczegóły</h2>
+            </div>
+
+            <div class="row">
+
+                <div class="col-md-4">
+                    <div class="feature-block text-center mb-5">
+                        <i class="fas fa-laptop fa-2x mb-2"></i>
+                        <h3 class="text-center">Design</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus exercitationem. </p>
+                    </div>
+
+                    <div class="feature-block text-center">
+                        <i class="fas fa-download fa-2x mb-2"></i>
+                        <h3 class="text-center">Bezpieczeństwo</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus exercitationem. </p>
+                    </div>
+                </div>
+
+                <div class="col-md-4">
+                    <img src="~/img/pomiardb-dev2.png" class="img-fluid" alt="">
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="feature-block text-center mb-5">
+                        <i class="fas fa-laptop-house fa-2x mb-2"></i>
+                        <h3 class="text-center">Szybkość</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus exercitationem. </p>
+                    </div>
+
+                    <div class="feature-block text-center">
+                        <i class="fas fa-download fa-2x mb-2"></i>
+                        <h3 class="text-center">Baza Danych</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Natus exercitationem. </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Download section-->
+
+
+    <section id="download">
+
+        <div class="container">
+            <div class="row download-title justify-content-center">
+                <h2>Pobierz aplikację</h2>
+                <p>Pobierz aplikację PomiarDB na swoje urządzenie mobilne i już dziś w pełni wykorzystaj potencjał PomiarDB. <br>Wysyłaj i odbieraj pomiary gdziekolwiek jesteś.</p>
+                <div class="download-btns">
+                    <a href="#"><i class="fab fa-apple"></i> App Store</a>
+                    <a href="#"><i class="fab fa-android"></i> Play Store</a>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!--Pricing section-->
+
+    <section id="pricing">
+        <div class="container">
+
+            <div class="row section-title justify-content-center">
+                <h2 class="section-title-heading">PAKIETY</h2>
+            </div>
+
+            <div class="row justify-content-center">
+
+                <div class="col-md pricing-table">
+                    <div class="table-header text-center">
+                        <h4>SMART</h4>
+                        <p>25ZŁ/msc</p>
+                    </div>
+                    <div class="table-content">
+                        <ul>
+                            <li>free support</li>
+                            <li>1gb storage</li>
+                            <li>1 users</li>
+                            <li>1 email account</li>
+                        </ul>
+                    </div>
+                    <div class="table-footer text-center">
+                       
+                        @Html.ActionLink("Wybierz", "NewOrder", new { package = 1 },  new {@class = "btn-order"})
+                    </div>
+
+                </div>
+
+                <div class="col-md pricing-table">
+
+                    <div class="table-header text-center">
+                        <h4>PRO</h4>
+                        <p>45ZŁ/msc</p>
+                    </div>
+                    <div class="table-content">
+                        <ul>
+                            <li>free support</li>
+                            <li>20gb storage</li>
+                            <li>5 users</li>
+                            <li>5 email account</li>
+                        </ul>
+                    </div>
+                    <div class="table-footer text-center">
+                        @Html.ActionLink("Wybierz", "NewOrder", new { package = 2 }, new {@class = "btn-order"})
+                    </div>
+
+                </div>
+                <div class="col-md pricing-table">
+
+                    <div class="table-header text-center">
+                        <h4>GOLD</h4>
+                        <p>65ZŁ/msc</p>
+                    </div>
+                    <div class="table-content">
+                        <ul>
+                            <li>free support</li>
+                            <li>no limit</li>
+                            <li>no limit users</li>
+                            <li>no limit email account</li>
+                        </ul>
+                    </div>
+                    <div class="table-footer text-center">
+                        @Html.ActionLink("Wybierz", "NewOrder", new { package = 3 }, new {@class="btn-order"})
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+    </section>
+
+
+
+    <!--Contact section-->
+
+    <section id="contact">
+        <div class="container">
+
+            <div class="row section-title justify-content-center">
+                <h2 class="section-title-heading">Napisz do nas</h2>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-8">
+                    <div class="contact-form">
+
+
+                        @using (Html.BeginForm("Send", "Home", FormMethod.Post))
+                        {
+                            <div class="row">
+                                <div class="col">
+                                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control", @placeholder = "Imię" })
+                                    @Html.ValidationMessageFor(m => m.FirstName, "", new { @style = "color:red" })
+                                </div>
+                                <div class="col">
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control", @placeholder = "Email" })
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @style = "color:red" })
+                                </div>
+                            </div>
+                            <div class="form-group mt-4">
+                                @Html.TextAreaFor(m => m.Text, new { @class = "form-control", @placeholder = "Wpisz treść wiadomości", @rows = 10 })
+                                @Html.ValidationMessageFor(m => m.Text, "", new { @style = "color:red" })
+                            </div>
+
+                            <button type="submit" class="btn btn-contact mt-4">Wyślij</button>
+
+                        }
+
+                    </div>
+
+                </div>
+
+                <div class="col-md-4">
+
+                    <div class="address">
+                        <h3>Dane kontaktowe:</h3>
+                        <p>Masz pytania ? Skontaktuj się z Nami za pomocą formularza lub telefonicznie. Serdecznie zapraszamy.</p>
+                    </div>
+                    <div class="contact-details">
+                        <ul class="fa-ul">
+                            <li><span class="fa-li"><i class="fas fa-mobile-alt"></i></span>+48 516 302 300</li>
+                            <li><span class="fa-li"><i class="fas fa-map-marker-alt"></i></span>Katowice</li>
+                            <li><span class="fa-li"><i class="fas fa-paper-plane"></i></span>pomiardb@outlook.com</li>
+                        </ul>
+                    </div>
+
+                </div>
+
+
+
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Footer section -->
+    <footer id="footer">
+
+        <div class="container">
+
+            <div class="row d-flex flex-column align-items-center">
+
+                <div class="footer-logo">
+                    <img src="~/img/logo.png" alt="obrazek">
+                </div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+                <div class="copyright text-center">
+                    <p>Copyright 2020</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <script src="~/img/jquery.scrollTo.min.js"></script>
+    <script src="~/Scripts/custom.js"></script>
+
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+﻿@model IEnumerable<WebPomiar.Models.Message>
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+                <h4 class="display-4">Lista wiadomości:</h4>
+                <p class="lead">Lista wiadomości otrzymywanych z formularza internetowego. <br />Lista zawiera imię nadawcy, adres email oraz treść wiadomości.</p>
+            </div>
+        </div>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th>Lp</th>
+                    <th>Imię</th>
+                    <th>Email</th>
+                    <th>Treść</th>
+                </tr>
+            </thead>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>Nr</td>
+                    <td>@item.FirstName</td>
+                    <td>@item.Email</td>
+                    <td>@item.Text</td>
+                </tr>
+            }
+
+        </table>
+    </div>
+</body>
+</html>

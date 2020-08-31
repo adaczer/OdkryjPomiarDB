@@ -1,0 +1,15 @@
+﻿body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.myCtn {
+    position: absolute;
+    width: 400px;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.card-body {
+    box-shadow: 0 3px 5px gray;
+}

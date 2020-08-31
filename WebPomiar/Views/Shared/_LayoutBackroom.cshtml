@@ -1,0 +1,35 @@
+﻿@using Microsoft.AspNet.Identity
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="container">
+        <div class="jumbotron jumbotron-fluid">
+
+            @using (Html.BeginForm("logout", "backroom", FormMethod.Post, new { id = "logoutForm", @class = "text-right mr-3" }))
+            {
+            @Html.AntiForgeryToken()
+
+                <a class="btn btn-info" href="javascript:document.getElementById('logoutForm').submit()">Wyloguj się</a>
+            
+            }
+
+            <div class="container">
+           
+                <h4 class="display-4">Centrum zarządzania serwisem.</h4>
+                <p class="lead">Centrum zarządzania serwisem. <br />Lista wiadomości od klientów oraz lista zamówień. </p>
+                @Html.ActionLink("Wyświetl wiadomości", "GetMsg", null, new { @class = "btn btn-info" })
+                @Html.ActionLink("Wyświetl zamówienia", "GetOrders", null, new { @class = "btn btn-info" })
+            </div>
+        </div>
+        <div>
+            @RenderBody()
+        </div>
+    </div>
+</body>
+</html>

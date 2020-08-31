@@ -1,0 +1,70 @@
+﻿@using WebPomiar.Models
+@model LoginViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Zaloguj się do serwisu</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Content/styleLogin.css" rel="stylesheet" />
+</head>
+<body>
+
+
+    <div class="container myCtn">
+        <div class="card">
+            <div class="card-body">
+                <div class="col-md-12">
+                    <h2 class="text-center mt-3">Zaloguj się</h2>
+
+
+                    <section id="loginForm">
+                        @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+                        {
+                            @Html.AntiForgeryToken()
+                 
+                            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Email, new { @class = "control-label" })
+                                
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger small" })
+                                
+                            </div>
+                            <div class="form-group">
+                                @Html.LabelFor(m => m.Password, new { @class = "control-label" })
+                                
+                                    @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger small" })
+                               
+                            </div>
+
+                            <div class="form-group">
+                                <div class="justify-content-center text-center">
+                                    <input type="submit" value="Zaloguj" class="btn btn-primary" />
+                                </div>
+                            </div>
+
+
+                        }
+                    </section>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+
+</body>
+</html>

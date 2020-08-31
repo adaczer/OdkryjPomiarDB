@@ -1,0 +1,119 @@
+﻿@model WebPomiar.Models.Order
+@{
+    ViewBag.Title = "NewOrder";
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>PomiarDB - realizacja zamówienia</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" />
+    <link href="~/Content/style.css" rel="stylesheet" />
+    <link href="~/Content/responsive.css" rel="stylesheet" />
+
+</head>
+<body>
+
+    <section id="hero">
+        <div class="container">
+
+
+
+            <div class="row justify-content-center text-center main-hero-content">
+                <div class="col">
+
+                    <h1>DOSKONAŁY WYBÓR !</h1>
+                    <p>Dziękujemy za wybranie naszej aplikacji. Mamy nadzieję, że użytkowanie przyniesię wiele satysfakcji.<br />Wypełnij formularz i zamów aplikację. </p>
+
+                    <div class="card  mb-4" style="width: 25rem;  margin: 0 auto;">
+                        <div class="card-body ">
+                            @using (Html.BeginForm("NewOrder", "Home", FormMethod.Post))
+                            {
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.FirstName)
+                                    @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.FirstName, "", new { @style = "color:red" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.LastName)
+                                    @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.LastName, "", new { @style = "color:red" })
+                                </div>
+
+                                <div class="form-group">
+                                    @Html.LabelFor(m => m.Email)
+                                    @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Email, "", new { @style = "color:red" })
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <button type="submit" class="btn-order">Zamawiam</button>
+                                </div>
+
+                            }
+
+
+                        </div>
+                    </div>
+                    <br />
+                    <br />
+                    <br />
+      
+                </div>
+                
+            </div>
+        </div>
+
+    </section>
+
+
+    @*@using (Html.BeginForm("NewOrder", "Home", FormMethod.Post))
+    {
+        <div class="form-group">
+            @Html.LabelFor(m => m.FirstName)
+            @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.LastName)
+            @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(m => m.Email)
+            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
+        </div>
+
+
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-success">Wyślij</button>
+        </div>
+
+    }*@
+
+
+
+    <script src="~/Scripts/jquery-3.5.1.min.js"></script>
+    <script src="~/Scripts/popper.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+
+    <script src="~/img/jquery.scrollTo.min.js"></script>
+    <script src="~/Scripts/custom.js"></script>
+
+    @*<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>*@
+
+</body>
+</html>

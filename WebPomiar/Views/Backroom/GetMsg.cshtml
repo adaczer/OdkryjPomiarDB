@@ -1,0 +1,28 @@
+﻿
+@{
+    ViewBag.Title = "GetMsg";
+    Layout = "~/Views/Shared/_LayoutBackroom.cshtml";
+}
+<h4 class="mb-4">Wiadomości od użytkowników:</h4>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>Lp</th>
+            <th>Imię</th>
+            <th>Email</th>
+            <th>Treść wiadomości</th>
+        </tr>
+    </thead>
+    @{int lp = 1; }
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@(lp++)</td>
+            <td>@item.FirstName</td>
+            <td>@item.Email</td>
+            <td>@item.Text</td>
+        </tr>
+    }
+
+</table>
+
